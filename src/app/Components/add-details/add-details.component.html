@@ -1,0 +1,34 @@
+
+<div class="container">
+    <div class="row">
+        <h2>Register a new Book</h2>
+       <div class="col-md-10">
+            <p>
+                Enter the Airline Id:
+                <input [(ngModel)]="newair.airlineId" placeholder="Enter the Book Id" class="form-contrtol"/>
+            </p>
+            <p>
+                Enter the Airline Name:
+                <input [(ngModel)]="newair.name" placeholder="Enter the Book name" class="form-contrtol"/>
+            </p>
+            <p>
+                Enter the Destination:
+                <input [(ngModel)]="newair.destination" placeholder="Enter the Book price" class="form-contrtol"/>
+            </p>
+            <p>
+                Enter the Air Price:
+                <input [(ngModel)]="newair.fare" placeholder="Enter the Book price" class="form-contrtol"/>
+            </p>
+            
+           <p>
+                Select the image:
+                <input type="file" [(ngModel)]="newair.image" placeholder="Select the image" class="form-control"/>
+            </p>
+           <p>
+            
+                <button class="btn btn-danger" (click)="onAddClick()">Add to Database</button>
+            </p>
+         
+        </div>
+    </div>
+</div>
