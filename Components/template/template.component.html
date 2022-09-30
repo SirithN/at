@@ -1,0 +1,43 @@
+<h2>Template driven form Validation</h2>
+<style>
+    p{   
+        color:red;font-size: 0.8em;font-style: italic;
+    }
+</style>
+<hr>
+<div class="container">
+    <div class="row-m-2">
+        <div class="col-md-6">
+            <form #airForm="ngForm" (ngSubmit)="onSubmit()">
+                <div>
+                    <label for="id">Enter the ID: </label>
+                    <input class="form-control" type="number" [(ngModel)]="airObj.airlineId" #id="ngModel" name="id" required min="1001" max="2000" />
+                    <p *ngIf="!id.valid && (id?.dirty || id?.touched)">
+                        <span *ngIf="id.errors?.['required']">ID is mandatory</span>
+                        <span *ngIf="id.errors?.['min']">ID should be greater than 1001</span>
+                    </p>
+                </div>
+                <div>9
+                    <label for="name">Enter the name: </label>
+                    <input class="form-control" type="text" #name="ngModel" [(ngModel)]="airObj.name" name="name" required  minlength="5"/>
+                    <p *ngIf="!name.valid && (name?.dirty || name?.touched)">
+                        <span *ngIf="name.errors?.['required']">Name is mandatory</span>
+                        <span *ngIf="name.errors?.['minlength']">Name should be minimun length of 5 characters</span>
+
+                    </p>
+                </div>
+                <div>
+                    <label for="email">Enter the email: </label>
+                    <input class="form-control" type="email" #email="ngModel" [(ngModel)]="airObj.destination" name="email" required minlength="5"/>
+                    <p *ngIf="!email.valid && (email?.dirty || email?.touched)">
+                        <span>Email is mandatory</span>
+                    </p>
+                </div>
+
+                <div>
+                    <button [disabled]="!airForm.valid" class="btn btn-danger">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

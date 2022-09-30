@@ -1,0 +1,25 @@
+<div class ="container">
+    <div class ="row">
+        <h2>
+            Details of the Airline
+        </h2>
+        <hr>
+        <p>
+            Select a file<input type = "file"   class ="form-control" [(ngModel)] = "foundair.image">
+        </p>
+        <p><input type = "text"  disabled class ="form-control" [(ngModel)] = "foundair.airlineId"></p>
+        <p><input type = "text"  class ="form-control" [(ngModel)] = "foundair.name"></p>
+        <p><input type = "text"  class ="form-control" [(ngModel)] = "foundair.destination"></p>
+        <p><input type = "number"  class ="form-control" [(ngModel)] = "foundair.fare"></p>
+        <p>
+            <button class ="btn btn-primary" (click)="onSubmit()">
+                <i class = "fa fa-arrow-left"></i>
+                Save Changes
+            </button>
+            <button class ="btn btn-primary" routerLink = "/Airline/All">
+                <i class = "fa fa-arrow-left"></i>
+                Back
+            </button>
+        </p>
+    </div>
+</div>
